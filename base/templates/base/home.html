@@ -1,5 +1,5 @@
-{% comment %} extending main.html this way {% endcomment %}
 {% extends 'main.html' %}
+{% comment %} extending main.html this way {% endcomment %}
 {% comment %} Rap our entire content here into our main.html{% endcomment %}
 {% block content %}
 <div>
@@ -7,8 +7,11 @@
   {% comment %} with a forloop we add each room by id and name in a div {% endcomment %}
     {% for room in rooms %}
     <div>
+    <span>@{{room.host.username}}</span>
     {% comment %} we add {% url 'room' room.id %} so if the url changed we shouldnt changed it in our whole project {% endcomment %}
       <h5>{{room.id}} -- <a href=" {% url 'room' room.id %} ">{{room.name}}</a></h5>
+      <small>{{room.topic.name}}</small>
+      <hr>
     </div>
 
     {% endfor %}
