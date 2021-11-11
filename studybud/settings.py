@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # adding new app called bas and conecting it to the BaseConfig
     'base.apps.BaseConfig',
 ]
 
@@ -56,6 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            # adding the templates
             BASE_DIR / 'templates'
         ],
         'APP_DIRS': True,

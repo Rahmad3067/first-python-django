@@ -2,6 +2,7 @@
 
 
 {% block content %}
-<h1>Room Template</h1>
+{% comment %} because we passed room as context in urls.py, here we can add room's name in and its dynamic each time  based on clicking on what link {% endcomment %}
+<h1>{{room.name}}</h1>
 
 {% endblock content %}

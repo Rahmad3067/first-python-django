@@ -1,15 +1,20 @@
-{% extends 'main.html' %} {% block content %}
-<h1>Home Template</h1>
-
+{% comment %} extending main.html this way {% endcomment %}
+{% extends 'main.html' %}
+{% comment %} Rap our entire content here into our main.html{% endcomment %}
+{% block content %}
 <div>
   <div>
+  {% comment %} with a forloop we add each room by id and name in a div {% endcomment %}
     {% for room in rooms %}
     <div>
-      <h5>{{room.id}} -- {{room.name}}</h5>
+    {% comment %} we add {% url 'room' room.id %} so if the url changed we shouldnt changed it in our whole project {% endcomment %}
+      <h5>{{room.id}} -- <a href=" {% url 'room' room.id %} ">{{room.name}}</a></h5>
     </div>
 
     {% endfor %}
+    {% comment %} we close our for {% endcomment %}
   </div>
 </div>
 
 {% endblock content %}
+{% comment %} we close raping content here {% endcomment %}
